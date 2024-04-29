@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+	<title>FAQ</title>
+</head>
+<body>
+	<style>
+	*{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		background-color:#fff;
+		background-image: url("faq1.jpg");
+        background-repeat: no-repeat;
+        background-size: 90%;
+        background-position: center;
+	}
+	
+	.faq-container{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		background-color: whitesmoke;
+		border-radius: 10px;
+		width: 50%;
+		margin-left: 350px;
+		margin-top: 50px;
+		padding: 50px 15px;
+	}
+	.fa-star{
+		margin-bottom: 15px;
+		color: purple;
+		width: 50px;
+		padding: 15px;
+
+	}
+	.FAQ-HEADER{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	h1{
+		font-size: 2rem;
+		font-weight: 700;
+		text-transform: capitalize;
+		color: purple;
+
+	}
+	.faq-content ul{
+		list-style: none;
+	}
+	.faq-content ul li{
+		font-size: 1.5rem;
+		font-weight: 600;
+		text-transform: capitalize;
+		padding: 15px;
+		color: purple;
+	}
+	.faq-content dl{
+		font-size: 1.25rem;
+		font-weight: 500;
+		text-transform: capitalize;
+		padding: 10px;
+		color: black;
+display: block;
+	}
+	.faq-content button{
+		border: none;
+		outline: none;
+		border-radius: 50%;
+		background-color:#ce9cbd;
+		width: 40px;
+		height:40px;
+		font-size: 1.5rem;
+		font-weight: 700;
+		text-align: center;
+		cursor: pointer;
+	}
+	.faq-content  .icon{
+		display: inline-block;
+		top: 18px;
+       right: 0;
+       width: 22px;
+      height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+	}
+	.faq-content .icon::before{
+		display: block;
+  position: relative;
+		content: "";
+		top:9px;
+		left: 5px;
+		width: 10px;
+		height: 2px;
+		background-color:black;
+	}
+	button .icon::after {
+  display: block;
+  position:relative;
+  content: '';
+  top: 3px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+button:focus .icon{
+	opacity: 0;
+  }
+button:focus::before{
+	content:'';
+	position: relative;
+	display: block;
+	top:15px;
+	left: 15px;
+	width: 10px;
+	height: 2px;
+	border: 1px solid black;
+	background-color: black;
+}
+#d1,#d2,#d3,#d4{
+	display: none;
+}
+
+	</style>
+	<div class="faq-container">
+<div class="FAQ-HEADER">
+<i class='far fa-star'></i>
+<h1>FAQ</h1>
+</div>
+<div class="faq-content">
+<ul class="faq-list">
+<li  id="faq-list1">what is frontend mentor, and how will it help me?
+<button aria-pressed="false" onclick="showItem()" onclick="delt()" id="btn1"><span class="icon" aria-hidden="true"></span>
+</button><dl id="d1">frontend mentor offers realistic coding challenges that help frontend developers improving their coding skills with projects in html and css and javascript. it's suitable for all levels and ideal for portfoilo building.</dl></li>
+<li id="faq-list2">is frontend mentor free?
+<button aria-pressed="false" onclick="show1()" onclick="delt1()" id="btn2" ><span class="icon" aria-hidden="true"></span>
+</button><dl id="d2">yes , some challenges are free</dl></li>
+
+<li id="faq-list3">can  i use frontend mentor projects in my portfolio?
+<button aria-pressed="false" onclick="show2()" onclick="delt2()" id="btn3"><span class="icon" aria-hidden="true"></span>
+</button><dl id="d3">yes you can</dl></li>
+
+<li id="faq-list4">how can i get help if i am stuck on a challenge?
+<button aria-pressed="false" onclick="show3()" onclick="delt3()"  id="btn4"><span class="icon" aria-hidden="true"></span>
+</button><dl id="d4">using github</dl></li>
+
+
+</ul>
+
+</div>
+</div>
+
+<script>
+	let faqlist1=document.getElementById("faq-list1");
+let faqlistitem=document.getElementById("d1");
+let btn1=document.getElementById("btn1");
+let faqlist2=document.getElementById("faq-list2");
+let faqlistitem1=document.getElementById("d2");
+let btn2=document.getElementById("btn2");
+let faqlist3=document.getElementById("faq-list3");
+let faqlistitem2=document.getElementById("d3");
+let btn3=document.getElementById("btn3");
+let faqlist4=document.getElementById("faq-list4");
+let faqlistitem3=document.getElementById("d4");
+   let btn4=document.getElementById("btn4");
+
+	function showItem(){
+faqlistitem.style.display="flex";
+btn1.onclick=delt;
+
+}
+	       function delt(){
+faqlistitem.style.display="none";
+btn1.onclick=showItem;
+
+}
+
+
+ function show1(){
+
+   faqlistitem1.style.display="flex";
+   btn2.onclick=delt1;
+}
+ function delt1()
+{
+faqlistitem1.style.display="none";
+btn2.onclick=show1;
+}
+
+ function show2(){
+
+   
+   faqlistitem2.style.display="flex";
+   btn3.onclick=delt2;}
+
+   function delt2()
+{
+faqlistitem2.style.display="none";
+btn3.onclick=show2;
+
+}
+   function show3(){
+faqlistitem3.style.display="flex";
+btn4.onclick=delt3;
+
+}
+   function delt3() {
+   	faqlistitem3.style.display="none";
+   	btn4.onclick=show3;
+
+   }
+</script>
+</body>
+</html>
